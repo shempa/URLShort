@@ -1,0 +1,57 @@
+﻿@model IEnumerable<UrlShort.Models.Url>
+
+<!DOCTYPE html>
+
+<html>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrlLong)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrlShort)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hash)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrlLong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrlShort)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hash)
+                    </td>
+                    <td> 
+                        @Html.ActionLink("Edit", "EditUrl", new { id = item.Id })
+                        @Html.ActionLink("Delete", "DelUrl", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+   
+</body>
+</html>

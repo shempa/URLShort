@@ -1,0 +1,15 @@
+
+
+    <body>
+        <form action="SavUrl">
+            <h1>Enter Url</h1>
+            <input type="url" name="UrlLong" />
+            <input type="submit" value="Add"/>
+        </form>
+    </body>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
